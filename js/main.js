@@ -27,12 +27,28 @@ const { $_ready, $_ } = Monogatari;
 
 // 1. Outside the $_ready function:
 
+monogatari.component ('loading-screen').template (() => {
+	return `
+		<div class="loading-screen">
+			<div class="spinner"></div>
+			<img src="../assets/characters/yoom/cola.gif" alt="Loading..." class="loading-gif">
+			<h2>Loading...</h2>
+			<p>Please wait while we load your adventure...</p>
+		</div>
+	`;
+});
+
+monogatari.component ('main-screen').template (() => {
+	return `
+		<h1 class="title-screen">Void Sages and The Witches of Scarlet Moon</h1>
+		<main-menu></main-menu>
+	`;
+});
 
 $_ready (() => {
 	// 2. Inside the $_ready function:
 
 	monogatari.init ('#monogatari').then (() => {
 		// 3. Inside the init function:
-
 	});
 });
